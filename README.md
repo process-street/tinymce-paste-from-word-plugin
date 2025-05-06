@@ -89,3 +89,16 @@ This plugin is a preprocessor which converts paste content from MS Word into Web
 Type: Boolean
 
 Default Value: `true`
+
+## Updating package in NPM
+
+First, make sure you
+
+Run the following command to update the package in NPM:
+
+```bash
+npm version patch # or minor / major
+npm run build
+npm login
+npm publish --access public
+```
