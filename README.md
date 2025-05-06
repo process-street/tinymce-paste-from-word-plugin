@@ -1,59 +1,23 @@
 # TinyMCE Paste from Word Plugin
 
-This plugin adds the open-source [Paste from Word](https://www.tiny.cloud/docs/plugins/opensource/paste/) functionality from the 5.x branch of TinyMCE as a plugin for the 6.x branch. The goal of this project is not to replace the premium [PowerPaste plugin](https://www.tiny.cloud/tinymce/features/powerpaste/), but to allow users who would otherwise stay on the 5.x branch solely for paste-from-word support to upgrade to the 6.x branch.
+This plugin adds the open-source [Paste from Word](https://www.tiny.cloud/docs/plugins/opensource/paste/) functionality from the 5.x branch of TinyMCE as a plugin for the 6.x branch. The goal of this project is not to replace the premium [PowerPaste plugin](https://www.tiny.cloud/tinymce/features/powerpaste/), but to allow users who would otherwise stay on the 5.x branch solely for paste-from-word support to upgrade to later versions.
 
-## END-OF-SUPPORT NOTICE
-
-This plugin will not support the 7.x or later branches of TinyMCE due to their [licensing changes](https://github.com/tinymce/tinymce/issues/9453). Therefore, this repository became **READ-ONLY** when TinyMCE 6.x support ended in Oct 2024.
+This is a fork from a previous unmaintained version of this plugin.
 
 ### Comparison with PowerPaste
 
 | Feature                           | This Plugin | PowerPaste |
-| :-------------------------------- | :---------: | :--------: |
-| Automatically cleans up content   |     ✔      |     ✔     |
-| Supports embedded images          |      -      |     ✔     |
-| Paste from Microsoft Word         |     ✔      |     ✔     |
-| Paste from Microsoft Word online  |     ✔      |     ✔     |
-| Paste from Microsoft Excel        |      -      |     ✔     |
+| :-------------------------------- |:-----------:|:----------:|
+| Automatically cleans up content   |      ✔      |     ✔      |
+| Supports embedded images          |      -      |     ✔      |
+| Paste from Microsoft Word         |      ✔      |     ✔      |
+| Paste from Microsoft Word online  |      ✔      |     ✔      |
+| Paste from Microsoft Excel        |      -      |     ✔      |
 | Paste from Microsoft Excel online |      -      |     -      |
-| Paste from Google Docs            |     ✔      |     ✔     |
+| Paste from Google Docs            |      ✔      |     ✔      |
 | Paste from Google Sheets          |      -      |     -      |
 
 ## Usage
-
-### Option 1: CDN Hosted
-
-1. Tell your TinyMCE instance where to load the plugin from and how to configure it:
-
-```js
-tinymce.PluginManager.load(
-  "paste_from_word",
-  "https://unpkg.com/@pangaeatech/tinymce-paste-from-word-plugin@latest/index.js",
-);
-tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-  plugins: "paste_from_word",
-  paste_webkit_styles: "all",
-  paste_remove_styles_if_webkit: false,
-});
-```
-
-### Option 2: Self-Hosted
-
-1. Create a new folder `paste_from_word` inside of the existing TinyMCE `plugins` folder.
-2. Download the file `https://unpkg.com/@pangaeatech/tinymce-paste-from-word-plugin@latest/index.js` and add it to that new folder, renaming it `plugin.min.js`
-3. Configure your TinyMCE instance to use the plugin:
-
-```js
-tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-  plugins: "paste_from_word",
-  paste_webkit_styles: "all",
-  paste_remove_styles_if_webkit: false,
-});
-```
-
-### Option 3: React (etc.)
 
 The following instructions are for a project using ReactJS and NPM, but you can
 easily modify these for any other NodeJS-based project.

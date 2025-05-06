@@ -131,3 +131,6 @@ lib
 .pnp.*
 
 types
+
+# Idea
+.idea
